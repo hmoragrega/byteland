@@ -1,0 +1,32 @@
+mysql::database: 'byteland'
+mysql::user: 'byteland'
+mysql::pass: 'm$qt^RHDErh9b0qu'
+mysql::sql: '/vagrant/vagrant/puppet/data/byteland.dev.sql'
+
+php::version: '5.5.9+dfsg-1ubuntu4.5'
+php::service: 'nginx'
+
+nginx::nginx_vhosts:
+  'byteland.dev':
+    www_root: '/var/www/byteland.dev/web'
+    try_files: [ '$uri', '/app_dev.php$is_args$args' ]
+  'byteland.int':
+    www_root: '/var/www/byteland.dev/web'
+    try_files: [ '$uri', '/app.php$is_args$args' ]
+nginx::nginx_locations:
+  'development':
+    vhost: 'byteland.dev'
+    location: '~ ^/(app_dev|config)\.php(/|$)'
+    fastcgi: 'unix:/var/run/php5-fpm.sock'
+    fastcgi_split_path: '^(.+\.php)(/.*)$'
+    fastcgi_param:
+      SCRIPT_FILENAME: '/var/www/byteland.dev/web/$fastcgi_script_name'
+      HTTPS: 'off'
+  'integration':
+    vhost: 'byteland.int'
+    location: '~ ^/app\.php(/|$)'
+    fastcgi: 'unix:/var/run/php5-fpm.sock'
+    fastcgi_split_path: '^(.+\.php)(/.*)$'
+    fastcgi_param:
+      SCRIPT_FILENAME: '/var/www/byteland.dev/web/$fastcgi_script_name'
+      HTTPS: 'off'

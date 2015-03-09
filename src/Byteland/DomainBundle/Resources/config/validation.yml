@@ -1,0 +1,63 @@
+Byteland\DomainBundle\Entity\Restaurant:
+    properties:
+        id:
+            - GreaterThanOrEqual:
+                value: 1
+                message: The restaurant id has to be an positive integer
+        name:
+            - NotBlank:
+                message: The restaurant cannot have an empty name
+            - Length:
+                min: 1
+                max: 100
+        capacity:
+            - NotBlank:
+                message: The restaurant capacity has to be set
+            - GreaterThanOrEqual:
+                value: 1
+                message: The restaurant capacity must be one or greater
+
+Byteland\DomainBundle\Entity\Client:
+    properties:
+        id:
+            - GreaterThanOrEqual:
+                value: 1
+                message: The client id has to be an positive integer
+        name:
+            - NotBlank:
+                message: The client cannot have an empty name
+            - Length:
+                min: 1
+                max: 100
+
+Byteland\DomainBundle\Entity\ReserveList:
+    properties:
+        id:
+            - GreaterThanOrEqual:
+                value: 1
+                message: The client id has to be an positive integer
+        date:
+            - NotBlank:
+                message: The date must be present and valid, within the format YYYY-MM-DD
+
+Byteland\DomainBundle\Entity\Reserve:
+    properties:
+        id:
+            - GreaterThanOrEqual:
+                value: 1
+                message: The client id has to be an positive integer
+        availableRestaurant:
+            - Valid: ~
+        client:
+            - Valid: ~
+
+Byteland\DomainBundle\Entity\AvailableRestaurant:
+    properties:
+        id:
+            - GreaterThanOrEqual:
+                value: 1
+                message: The client id has to be an positive integer
+        reserveList:
+            - Valid: ~
+        restaurant:
+            - Valid: ~

@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="byteland">
+	<table_data name="client">
+	<row>
+		<field name="client_id">3</field>
+		<field name="name">Doe Johnson</field>
+	</row>
+	<row>
+		<field name="client_id">2</field>
+		<field name="name">Jane Foo</field>
+	</row>
+	<row>
+		<field name="client_id">1</field>
+		<field name="name">John Red</field>
+	</row>
+	<row>
+		<field name="client_id">4</field>
+		<field name="name">Max Mad</field>
+	</row>
+	</table_data>
+	<table_data name="reserve_list">
+	<row>
+		<field name="reserve_list_id">1</field>
+		<field name="date">2015-02-13</field>
+	</row>
+	<row>
+		<field name="reserve_list_id">2</field>
+		<field name="date">2015-02-14</field>
+	</row>
+	<row>
+		<field name="reserve_list_id">3</field>
+		<field name="date">2015-02-15</field>
+	</row>
+	</table_data>
+	<table_data name="restaurant">
+	<row>
+		<field name="restaurant_id">1</field>
+		<field name="name">Akelarre</field>
+		<field name="capacity">350</field>
+	</row>
+	<row>
+		<field name="restaurant_id">2</field>
+		<field name="name">El Kiosko</field>
+		<field name="capacity">23</field>
+	</row>
+	<row>
+		<field name="restaurant_id">3</field>
+		<field name="name">El Bulli</field>
+		<field name="capacity">44</field>
+	</row>
+	</table_data>
+	<table_data name="available_restaurant">
+		<row>
+			<field name="available_restaurant_id">1</field>
+			<field name="reserve_list_id">1</field>
+			<field name="restaurant_id">1</field>
+		</row>
+		<row>
+			<field name="available_restaurant_id">3</field>
+			<field name="reserve_list_id">1</field>
+			<field name="restaurant_id">2</field>
+		</row>
+		<row>
+			<field name="available_restaurant_id">2</field>
+			<field name="reserve_list_id">2</field>
+			<field name="restaurant_id">2</field>
+		</row>
+		<row>
+			<field name="available_restaurant_id">4</field>
+			<field name="reserve_list_id">2</field>
+			<field name="restaurant_id">3</field>
+		</row>
+		<row>
+			<field name="available_restaurant_id">5</field>
+			<field name="reserve_list_id">3</field>
+			<field name="restaurant_id">3</field>
+		</row>
+	</table_data>
+	<table_data name="reserve">
+		<row>
+			<field name="reserve_id">1</field>
+			<field name="available_restaurant_id">1</field>
+			<field name="client_id">1</field>
+		</row>
+		<row>
+			<field name="reserve_id">2</field>
+			<field name="available_restaurant_id">2</field>
+			<field name="client_id">1</field>
+		</row>
+		<row>
+			<field name="reserve_id">3</field>
+			<field name="available_restaurant_id">2</field>
+			<field name="client_id">2</field>
+		</row>
+	</table_data>
+</database>
+</mysqldump>

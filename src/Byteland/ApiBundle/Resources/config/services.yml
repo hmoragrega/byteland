@@ -1,0 +1,16 @@
+services:
+    byteland_api.controller.restaurant:
+        class: Byteland\ApiBundle\Controller\ApiController
+        arguments: [@byteland_domain.manager.restaurant]
+    byteland_api.controller.client:
+        class: Byteland\ApiBundle\Controller\ApiController
+        arguments: [@byteland_domain.manager.client]
+    byteland_api.controller.reserve:
+        class: Byteland\ApiBundle\Controller\ApiController
+        arguments: [@byteland_domain.manager.reserve]
+    byteland_api.controller.available_restaurant:
+        class: Byteland\ApiBundle\Controller\ApiController
+        arguments: [@byteland_domain.manager.available_restaurant]
+    byteland_api.controller.reserve_list:
+        class: Byteland\ApiBundle\Controller\ApiController
+        arguments: [@byteland_domain.manager.reserve_list]

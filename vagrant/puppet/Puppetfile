@@ -1,0 +1,13 @@
+forge "https://forgeapi.puppetlabs.com"
+
+# MySQL server module
+mod 'puppetlabs/mysql', '3.2.0'
+
+# Nginx Web Server module
+mod 'jfryman/nginx', '0.2.2'
+
+# PHP module
+mod 'example42/php', '2.0.19'
+
+# Composer
+mod 'willdurand/composer', '1.1.0'

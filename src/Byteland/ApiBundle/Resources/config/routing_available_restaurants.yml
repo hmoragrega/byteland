@@ -1,0 +1,30 @@
+byteland_api_available_restaurants_find_by:
+    path:     /available_restaurants
+    defaults: { _controller: byteland_api.controller.available_restaurant:findBy }
+    methods:  [GET]
+
+byteland_api_available_restaurants_create:
+    path:     /available_restaurants
+    defaults: { _controller: byteland_api.controller.available_restaurant:create }
+    methods:  [POST]
+
+byteland_api_available_restaurants_find:
+    path:     /available_restaurants/{id}
+    defaults: { _controller: byteland_api.controller.available_restaurant:find }
+    methods:  [GET]
+    requirements:
+        id:  \d+
+
+byteland_api_available_restaurants_delete:
+    path:     /available_restaurants/{id}
+    defaults: { _controller: byteland_api.controller.available_restaurant:delete }
+    methods:  [DELETE]
+    requirements:
+        id:  \d+
+
+byteland_api_available_restaurants_update:
+    path:     /available_restaurants/{id}
+    defaults: { _controller: byteland_api.controller.available_restaurant:update }
+    methods:  [PATCH]
+    requirements:
+        id:  \d+

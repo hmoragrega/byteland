@@ -1,0 +1,23 @@
+Byteland\DomainBundle\Entity\Reserve:
+  type: entity
+  table: reserve
+  id:
+      id:
+        column: reserve_id
+        type: integer
+        generator: { strategy: AUTO }
+        options:
+          unsigned: true
+  oneToOne:
+      client:
+        targetEntity: Client
+        cascade: ["persist"]
+        joinColumn:
+          name: client_id
+          referencedColumnName: client_id
+      availableRestaurant:
+        targetEntity: AvailableRestaurant
+        cascade: ["persist"]
+        joinColumn:
+          name: available_restaurant_id
+          referencedColumnName: available_restaurant_id

@@ -1,0 +1,30 @@
+byteland_api_reserve_list_find_by:
+    path:     /reserve_lists
+    defaults: { _controller: byteland_api.controller.reserve_list:findBy }
+    methods:  [GET]
+
+byteland_api_reserve_list_create:
+    path:     /reserve_lists
+    defaults: { _controller: byteland_api.controller.reserve_list:create }
+    methods:  [POST]
+
+byteland_api_reserve_list_find:
+    path:     /reserve_lists/{id}
+    defaults: { _controller: byteland_api.controller.reserve_list:find }
+    methods:  [GET]
+    requirements:
+        id:  \d+
+
+byteland_api_reserve_list_delete:
+    path:     /reserve_lists/{id}
+    defaults: { _controller: byteland_api.controller.reserve_list:delete }
+    methods:  [DELETE]
+    requirements:
+        id:  \d+
+
+byteland_api_reserve_list_update:
+    path:     /reserve_lists/{id}
+    defaults: { _controller: byteland_api.controller.reserve_list:update }
+    methods:  [PATCH]
+    requirements:
+        id:  \d+

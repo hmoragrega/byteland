@@ -1,0 +1,30 @@
+byteland_api_reserve_find_by:
+    path:     /reserves
+    defaults: { _controller: byteland_api.controller.reserve:findBy }
+    methods:  [GET]
+
+byteland_api_reserve_create:
+    path:     /reserves
+    defaults: { _controller: byteland_api.controller.reserve:create }
+    methods:  [POST]
+
+byteland_api_reserve_find:
+    path:     /reserves/{id}
+    defaults: { _controller: byteland_api.controller.reserve:find }
+    methods:  [GET]
+    requirements:
+        id:  \d+
+
+byteland_api_reserve_delete:
+    path:     /reserves/{id}
+    defaults: { _controller: byteland_api.controller.reserve:delete }
+    methods:  [DELETE]
+    requirements:
+        id:  \d+
+
+byteland_api_reserve_update:
+    path:     /reserves/{id}
+    defaults: { _controller: byteland_api.controller.reserve:update }
+    methods:  [PATCH]
+    requirements:
+        id:  \d+

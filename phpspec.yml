@@ -1,0 +1,11 @@
+suites:
+  byteland_domain_bundle:
+    namespace: 'Byteland\DomainBundle'
+    src_path:  'src/Byteland/DomainBundle/'
+    spec_path: 'src/Byteland/DomainBundle/Tests'
+  byteland_api_bundle:
+    namespace: 'Byteland\ApiBundle'
+    src_path:  'src/Byteland/ApiBundle/'
+    spec_path: 'src/Byteland/ApiBundle/Tests'
+
+formatter.name: pretty

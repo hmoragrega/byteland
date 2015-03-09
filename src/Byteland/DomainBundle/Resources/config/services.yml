@@ -1,0 +1,33 @@
+services:
+
+    byteland_domain.repository.restaurant:
+        class: Byteland\DomainBundle\Repository\MySQL\RestaurantRepository
+        arguments: [@doctrine.orm.entity_manager, "\Byteland\DomainBundle\Entity\Restaurant"]
+    byteland_domain.repository.client:
+        class: Byteland\DomainBundle\Repository\MySQL\ClientRepository
+        arguments: [@doctrine.orm.entity_manager, "\Byteland\DomainBundle\Entity\Client"]
+    byteland_domain.repository.reserve_list:
+        class: Byteland\DomainBundle\Repository\MySQL\ReserveListRepository
+        arguments: [@doctrine.orm.entity_manager, "\Byteland\DomainBundle\Entity\ReserveList"]
+    byteland_domain.repository.available_restaurant:
+        class: Byteland\DomainBundle\Repository\MySQL\AvailableRestaurantRepository
+        arguments: [@doctrine.orm.entity_manager, "\Byteland\DomainBundle\Entity\AvailableRestaurant"]
+    byteland_domain.repository.reserve:
+        class: Byteland\DomainBundle\Repository\MySQL\ReserveRepository
+        arguments: [@doctrine.orm.entity_manager, "\Byteland\DomainBundle\Entity\Reserve"]
+
+    byteland_domain.manager.restaurant:
+        class: Byteland\DomainBundle\Manager\RestaurantManager
+        arguments: [@validator, @byteland_domain.repository.restaurant]
+    byteland_domain.manager.client:
+        class: Byteland\DomainBundle\Manager\ClientManager
+        arguments: [@validator, @byteland_domain.repository.client]
+    byteland_domain.manager.reserve_list:
+        class: Byteland\DomainBundle\Manager\ReserveListManager
+        arguments: [@validator, @byteland_domain.repository.reserve_list, @byteland_domain.repository.restaurant]
+    byteland_domain.manager.available_restaurant:
+        class: Byteland\DomainBundle\Manager\AvailableRestaurantManager
+        arguments: [@validator, @byteland_domain.repository.available_restaurant, @byteland_domain.manager.restaurant, @byteland_domain.manager.reserve_list]
+    byteland_domain.manager.reserve:
+        class: Byteland\DomainBundle\Manager\ReserveManager
+        arguments: [@validator, @byteland_domain.repository.reserve, @byteland_domain.manager.available_restaurant, @byteland_domain.manager.client]

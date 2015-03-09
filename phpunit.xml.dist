@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+        bootstrap="./phpunit.bootstrap.php"
+        backupGlobals="true"
+        backupStaticAttributes="false"
+        verbose="true">
+
+    <php>
+        <ini name="memory_limit" value="256M"/>
+        <ini name="session.save_path" value="/tmp"/>
+        <var name="DB_DSN" value="mysql:dbname=byteland;unix_socket=/var/run/mysqld/mysqld.sock" />
+        <var name="DB_USER" value="byteland" />
+        <var name="DB_PASSWD" value="m$qt^RHDErh9b0qu" />
+        <var name="DB_DBNAME" value="byteland" />
+    </php>
+
+    <filter>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src</directory>
+        </whitelist>
+    </filter>
+</phpunit>

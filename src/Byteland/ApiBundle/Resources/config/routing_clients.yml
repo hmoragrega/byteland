@@ -1,0 +1,30 @@
+byteland_api_client_find_by:
+    path:     /clients
+    defaults: { _controller: byteland_api.controller.client:findBy }
+    methods:  [GET]
+
+byteland_api_client_create:
+    path:     /clients
+    defaults: { _controller: byteland_api.controller.client:create }
+    methods:  [POST]
+
+byteland_api_client_find:
+    path:     /clients/{id}
+    defaults: { _controller: byteland_api.controller.client:find }
+    methods:  [GET]
+    requirements:
+        id:  \d+
+
+byteland_api_client_delete:
+    path:     /clients/{id}
+    defaults: { _controller: byteland_api.controller.client:delete }
+    methods:  [DELETE]
+    requirements:
+        id:  \d+
+
+byteland_api_client_update:
+    path:     /clients/{id}
+    defaults: { _controller: byteland_api.controller.client:update }
+    methods:  [PATCH]
+    requirements:
+        id:  \d+

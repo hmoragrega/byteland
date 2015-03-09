@@ -1,0 +1,61 @@
+swagger: '2.0'
+info:
+  title: Byteland API
+  description: Keep byteland client happy with the Byteland API
+  version: "1.0.0"
+# the domain of the service
+host: 127.0.0.1:8890
+# array of all schemes that your API supports
+schemes:
+  - http
+# will be prefixed to all paths
+basePath: /api/v1
+produces:
+  - application/json
+paths:
+  /restaurants:
+    get:
+      summary: Restaurants Types
+      description: |
+        The Restaurants endpoint returns information about the Byteland restaurants.
+      parameters:
+        - name: name
+          in: query
+          description: Name of the restaurant.
+          required: false
+          type: string
+        - name: capacity
+          in: query
+          description: The restaurant capacity
+          required: false
+          type: number
+          format: integer
+      responses:
+        200:
+          description: An array of restaurants
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Restaurant'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  Restaurant:
+    properties:
+      id:
+        type: string
+        description: Unique identifier representing a restaurant.
+      name:
+        type: string
+        description: Name of a restaurant.
+      capacity:
+        type: string
+        description: Capacity of the restaurant. For example, 4 people.
+  Error:
+    properties:
+      error:
+        type: string
+      error_code:
+        type: string

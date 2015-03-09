@@ -1,0 +1,3 @@
+byteland_api:
+    resource: "@BytelandApiBundle/Resources/config/routing.yml"
+    prefix:   /api/v1/

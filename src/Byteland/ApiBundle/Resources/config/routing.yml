@@ -1,0 +1,18 @@
+byteland_api_restaurant_routes:
+    resource: routing_restaurants.yml
+
+byteland_api_clients_routes:
+    resource: routing_clients.yml
+
+byteland_api_reserves_routes:
+    resource: routing_reserves.yml
+
+byteland_api_available_restaurants:
+    resource: routing_available_restaurants.yml
+
+byteland_api_reserve_lists_routes:
+    resource: routing_reserve_lists.yml
+
+byteland_api_swagger:
+    path:      /swagger
+    defaults:  { _controller: BytelandApiBundle:Swagger:serveFeed }
