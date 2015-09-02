@@ -29,9 +29,15 @@ class ApiControllerSpec extends ObjectBehavior
     function it_finds_an_entity_by_the_id($manager)
     {
         $manager->find('foo')->willReturn('foo');
+        
+        
+        
+        
+        
+        
         $response = $this->find('foo');
 
-        $this->validateJsonReponse($response, Response::HTTP_OK, 'foo');
+        $this->validateJsonResponse($response, Response::HTTP_OK, 'foo');
     }
 
     function it_finds_entities($manager, Request $request, ParameterBag $query)

@@ -50,9 +50,11 @@ class ApiController
             $entity = $this->manager->find($id);
 
         } catch (EntityNotFoundException $exception) {
+
             return $this->json($exception, JsonResponse::HTTP_NOT_FOUND);
 
         } catch (InvalidArgumentException $exception) {
+
             return $this->json($exception, JsonResponse::HTTP_BAD_REQUEST);
 
         } catch (Exception $exception) {
